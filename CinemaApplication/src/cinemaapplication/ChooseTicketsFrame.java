@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package cinemaapplication;
 
 import java.awt.event.ActionEvent;
@@ -28,27 +24,27 @@ public class ChooseTicketsFrame extends JFrame {
     
     public ChooseTicketsFrame() {
         this.setSize(600, 400);
-        this.setTitle("Επιλογή Εισιτηρίων");
+        this.setTitle("Choose Tickets");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLayout(null);
         
-        infoLbl = new JLabel("Τιμή                            Εισιτήρια                         Σύνολο");
+        infoLbl = new JLabel("Price                            Tickets                         Total");
         addTicketsBtn = new JButton("+");
         removeTicketsBtn = new JButton("-");
         numTicketsTxt = new JTextArea("0");
         ticketsPriceTxt = new JTextArea();
         totalTxt = new JTextArea("0");
-        chooseTicketsBtn = new JButton("Επιλογή Εισιτηρίων");
+        chooseTicketsBtn = new JButton("Choose Tickets");
         movieLbl = new JLabel();
         dialogLbl = new JLabel();
     }
     
     public void prepareChooseTicketsUI(int userId, int movieId) {
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema","root","vzw57hw");  
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema", "root", "vzw57hw");  
             Statement stmt = con.createStatement();
-            String query = "select movieName, timeView , dateView, type, hallName, ticketPrice from movie, hall where movie.hallId = hall.hallId and movieId='" + movieId + "';";
+            String query = "select movieName, timeView, dateView, type, hallName, ticketPrice from movie, hall where movie.hallId = hall.hallId and movieId='" + movieId + "';";
             ResultSet rs = stmt.executeQuery(query);      
             infoLbl.setBounds(130, 100, 300, 30);
             removeTicketsBtn.setBounds(210, 140, 50, 30);
@@ -85,7 +81,7 @@ public class ChooseTicketsFrame extends JFrame {
                         totalTxt.setText(String.valueOf(totalPrice));
                     }
                 }
-            } );
+            });
             removeTicketsBtn.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -99,7 +95,7 @@ public class ChooseTicketsFrame extends JFrame {
                         totalTxt.setText(String.valueOf(totalPrice));
                     }
                 }
-            } );
+            });
             chooseTicketsBtn.addActionListener(new ActionListener() {
                 @Override 
                 public void actionPerformed(ActionEvent e) {
@@ -110,7 +106,7 @@ public class ChooseTicketsFrame extends JFrame {
             this.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
-                    int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+                    int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                     if (i == JOptionPane.YES_OPTION) 
                         System.exit(0);
                     else if (i == JOptionPane.CANCEL_OPTION)

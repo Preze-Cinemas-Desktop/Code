@@ -69,7 +69,7 @@ public class ChooseMovieFrame extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             @Override
              public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)

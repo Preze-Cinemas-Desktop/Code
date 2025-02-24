@@ -22,7 +22,6 @@ import javax.swing.JRadioButton;
  *
  * @author Tiger
  */
-
 public class ChooseTimeViewFrame extends JFrame {
     
     private JRadioButton[] radioBtnArray;
@@ -33,22 +32,22 @@ public class ChooseTimeViewFrame extends JFrame {
       
     public ChooseTimeViewFrame() {
         this.setSize(600, 500);
-        this.setTitle("Επιλογή ώρας προβολής");
+        this.setTitle("Choose Show Time");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLayout(null);
         radioBtnArray = new JRadioButton[3];
         movieIdsArray = new int[3];
         bg = new ButtonGroup();
-        chooseTimeViewBtn = new JButton("Επιλογή ώρας προβολής");
+        chooseTimeViewBtn = new JButton("Choose Show Time");
         dialogLbl = new JLabel();
     }
     
     public void prepareChooseTimeViewUI(int userId, String movie) {
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema","root","vzw57hw");  
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema", "root", "vzw57hw");  
             Statement stmt = con.createStatement();
-            String query = "select movieId, movieName, timeView , dateView, type, hallName, ticketPrice from movie,hall "
+            String query = "select movieId, movieName, timeView, dateView, type, hallName, ticketPrice from movie, hall "
                 + "where movie.hallId = hall.hallId and movieName='" + movie + "';";
             ResultSet rs = stmt.executeQuery(query);
             int i = 0;
@@ -63,7 +62,7 @@ public class ChooseTimeViewFrame extends JFrame {
                 String hallName = rs.getString(6);
                 int ticketPrice = rs.getInt(7);
                 String queryResult = movieName + " " + timeView + " " + dateView + " " + type + " " + hallName + " " + 
-                       " " + Integer.toString(ticketPrice) + "$\n";
+                       Integer.toString(ticketPrice) + "$\n";
                 radioBtnArray[i] = new JRadioButton(queryResult);
                 movieIdsArray[i] = movieId;
                 radioBtnArray[i].setBounds(10, 150 + y, 500, 30);
@@ -74,8 +73,7 @@ public class ChooseTimeViewFrame extends JFrame {
             chooseTimeViewBtn.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    int numRadioBtns;
-                    numRadioBtns = bg.getButtonCount();
+                    int numRadioBtns = bg.getButtonCount();
                     for (int i = 0; i < numRadioBtns; i++) {
                         if (radioBtnArray[i].isSelected()) {
                             ChooseTicketsFrame frame5 = new ChooseTicketsFrame();
@@ -92,7 +90,7 @@ public class ChooseTimeViewFrame extends JFrame {
             this.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
-                    int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+                    int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                     if (i == JOptionPane.YES_OPTION) 
                         System.exit(0);
                     else if (i == JOptionPane.CANCEL_OPTION)

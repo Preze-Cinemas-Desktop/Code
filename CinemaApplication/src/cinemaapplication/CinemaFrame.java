@@ -28,14 +28,14 @@ public class CinemaFrame extends JFrame {
     private JLabel dialogLbl;
     
     public CinemaFrame() {
-        loginBtn = new JButton("Είσοδος Χρήστη");
-        subscriptionBtn = new JButton("Εγγραφή");
+        loginBtn = new JButton("User Login");
+        subscriptionBtn = new JButton("Sign Up");
         dialogLbl = new JLabel();
     }
     
     public void prepareUI() {
         this.setSize(550, 550);
-        this.setTitle("Εφαρμογή Διαχείρισης Κρατήσεων Εισιτηριών Κινηματογράφου");
+        this.setTitle("Cinema Ticket Booking Management Application");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLayout(null);
@@ -61,8 +61,8 @@ public class CinemaFrame extends JFrame {
         });
         this.addWindowListener(new WindowAdapter() {
             @Override
-             public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+            public void windowClosing(WindowEvent e) {
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)
@@ -75,6 +75,5 @@ public class CinemaFrame extends JFrame {
         this.add(subscriptionBtn);
         this.add(dialogLbl);
         this.setVisible(true);
-        
     }
 }

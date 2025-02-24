@@ -24,18 +24,18 @@ public class ExitFrame extends JFrame {
     
     public ExitFrame() {
         this.setSize(400, 400);
-        this.setTitle("Έξοδος");
+        this.setTitle("Exit");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLayout(null);
         
         messageLbl = new JLabel();
-        exitBtn = new JButton("Έξοδος");
+        exitBtn = new JButton("Exit");
         dialogLbl = new JLabel();
     }
     
     public void prepareExitUI() {
-        messageLbl.setText("Σας ευχαριστούμε για την συνεργασία");
+        messageLbl.setText("Thank you for your cooperation");
         messageLbl.setBounds(80, 150, 340, 30);
         exitBtn.setBounds(70, 200, 240, 30);
         exitBtn.addActionListener(new ActionListener() {
@@ -47,7 +47,7 @@ public class ExitFrame extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             @Override
              public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)

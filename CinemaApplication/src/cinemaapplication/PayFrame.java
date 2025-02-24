@@ -26,28 +26,29 @@ public class PayFrame extends JFrame {
     private JButton payBtn;
     private JLabel dialogLbl;
     
-    public PayFrame() {
-        this.setSize(550, 650);
-        this.setTitle("Πληρωμή");
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        this.setLayout(null);
-        
-        messageLbl = new JLabel();
-        infoLbl = new JLabel("Στοιχεία Πληρωμής");
-        firstNameLbl = new JLabel("Όνομα");
-        firstNameTxt = new JTextField();
-        lastNameLbl = new JLabel("Επώνυμο");
-        lastNameTxt = new JTextField();
-        cardNumLbl = new JLabel("Στοιχεία Κάρτας");
-        cardNumTxt = new JTextField();
-        dateExpireLbl = new JLabel("Ημερομηνία Λήξης");
-        dateExpireTxt = new JTextField();
-        secCodeLbl = new JLabel("Sec. Code");
-        secCodeTxt = new JTextField();
-        payBtn = new JButton("Πληρωμή");
-        dialogLbl = new JLabel();
-    }
+	public PayFrame() {
+		this.setSize(550, 650);
+		this.setTitle("Payment");
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.setLayout(null);
+		
+		messageLbl = new JLabel();
+		infoLbl = new JLabel("Payment Details");
+		firstNameLbl = new JLabel("First Name");
+		firstNameTxt = new JTextField();
+		lastNameLbl = new JLabel("Last Name");
+		lastNameTxt = new JTextField();
+		cardNumLbl = new JLabel("Card Details");
+		cardNumTxt = new JTextField();
+		dateExpireLbl = new JLabel("Expiration Date");
+		dateExpireTxt = new JTextField();
+		secCodeLbl = new JLabel("Sec. Code");
+		secCodeTxt = new JTextField();
+		payBtn = new JButton("Pay");
+		dialogLbl = new JLabel();
+	}
+
     
     public void preparePayUI(int totalPrice, int userId, int movieId, int numTickets) {
         infoLbl.setBounds(200, 35, 140, 30);
@@ -80,11 +81,11 @@ public class PayFrame extends JFrame {
                     cardNumTxt.setText("");
                     dateExpireTxt.setText("");
                     secCodeTxt.setText("");
-                    messageLbl.setText("Λάθος εισαγωγή στοιχείων πληρωμής");
+                    messageLbl.setText("Incorrect input of payment details");
                 } else {
                     oldAmount = bank.CheckAmount(customerId);
                     if (oldAmount < totalPrice) {
-                        messageLbl.setText("Το υπόλοιπο δεν επαρκεί για την συναλλαγή");
+                        messageLbl.setText("The balance is not sufficient for the transaction");
                     } else {
                         bank.doTransaction(customerId, totalPrice, oldAmount);
                         DownloadTransactionReceiptFrame frame8 = new DownloadTransactionReceiptFrame();
@@ -96,7 +97,7 @@ public class PayFrame extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)

@@ -28,31 +28,31 @@ public class DownloadTicketsFrame extends JFrame {
     
     public DownloadTicketsFrame() {
         this.setSize(400, 400);
-        this.setTitle("Λήψη Εισιτηρίων");
+        this.setTitle("Download Tickets");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLayout(null);
         
         messageLbl = new JLabel();
-        downloadTicketsBtn = new JButton("Λήψη Εισιτηρίων");
-        exitBtn = new JButton("Έξοδος");
+        downloadTicketsBtn = new JButton("Download Tickets");
+        exitBtn = new JButton("Exit");
         dialogLbl = new JLabel();
     }
     
     public void prepareDownloadTicketsUI(int userId, int movieId) {
         messageLbl.setBounds(50, 150, 140, 30);
-        messageLbl.setText("Επιτυχής Πληρωμή");
+        messageLbl.setText("Payment Successful");
         messageLbl.setBounds(130, 150, 140, 30);
         downloadTicketsBtn.setBounds(70, 200, 240, 30);
         downloadTicketsBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema","root","vzw57hw");  
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema", "root", "vzw57hw");  
                     Statement stmt = con.createStatement();
                     String query = "select firstName, lastName, email, phoneNumber, username, movieName, timeView, dateView, type, hallName, numSeats, totalPrice "
                             + "from reservation, user, movie, hall where reservation.userId = user.userId and reservation.movieId = movie.movieId "
-                            + "and movie.hallId = hall.hallId and reservation.userId=" + String.valueOf(userId) + " and reservation.movieId=" + String.valueOf(movieId) + ";";
+                            + "and movie.hallId = hall.hallId and reservation.userId=" + userId + " and reservation.movieId=" + movieId + ";";
                     ResultSet rs = stmt.executeQuery(query);
                     while (rs.next()) {
                         String firstName = rs.getString(1);
@@ -68,32 +68,32 @@ public class DownloadTicketsFrame extends JFrame {
                         int numSeats = rs.getInt(11);
                         int totalPrice = rs.getInt(12);
                         BufferedWriter buffer = new BufferedWriter(new FileWriter("Tickets" + username + ".txt"));
-                        buffer.write("Εισιτήρια");
+                        buffer.write("Tickets");
                         buffer.newLine();
                         buffer.newLine();
-                        buffer.write("Όνομα: " + firstName);
+                        buffer.write("First Name: " + firstName);
                         buffer.newLine();
-                        buffer.write("Επώνυμο: " + lastName);
+                        buffer.write("Last Name: " + lastName);
                         buffer.newLine();
                         buffer.write("Email: " + email);
                         buffer.newLine();
-                        buffer.write("Κινητό Τηλέφωνο: " + phoneNumber);
+                        buffer.write("Mobile Phone: " + phoneNumber);
                         buffer.newLine();
-                        buffer.write("Όνομα Χρήστη: " + username);
+                        buffer.write("Username: " + username);
                         buffer.newLine();
-                        buffer.write("Όνομα Ταινίας: " + movieName);
+                        buffer.write("Movie Name: " + movieName);
                         buffer.newLine();
-                        buffer.write("Ώρα Προβολής: " + timeView);
+                        buffer.write("Show Time: " + timeView);
                         buffer.newLine();
-                        buffer.write("Ημερομηνία Προβολής: " + dateView);
+                        buffer.write("Show Date: " + dateView);
                         buffer.newLine();
-                        buffer.write("Τύπος Ταινίας: " + type);
+                        buffer.write("Movie Type: " + type);
                         buffer.newLine();
-                        buffer.write("Αίθουσα Προβολής: " + hallName);
+                        buffer.write("Screening Hall: " + hallName);
                         buffer.newLine();
-                        buffer.write("Αριθμός επιλεγμένων εισιτηρίων: " + String.valueOf(numSeats));
+                        buffer.write("Number of Tickets Selected: " + numSeats);
                         buffer.newLine();
-                        buffer.write("Ποσό Πληρωμής: " + String.valueOf(totalPrice));
+                        buffer.write("Payment Amount: " + totalPrice);
                         buffer.close();
                         ExitFrame frame10 = new ExitFrame();
                         frame10.prepareExitUI();
@@ -108,7 +108,7 @@ public class DownloadTicketsFrame extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             @Override
              public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)

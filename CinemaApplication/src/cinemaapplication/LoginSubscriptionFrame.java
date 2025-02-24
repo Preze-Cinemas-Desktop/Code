@@ -39,20 +39,20 @@ public class LoginSubscriptionFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLayout(null);
         
-        usernameLbl = new JLabel("Όνομα Χρήστη");
+        usernameLbl = new JLabel("Username");
         usernameTxt = new JTextField();
-        passwordLbl = new JLabel("Κωδικός Πρόσβασης");
+        passwordLbl = new JLabel("Password");
         passwordTxt = new JPasswordField();
-        firstNameLbl = new JLabel("Όνομα");
+        firstNameLbl = new JLabel("First Name");
         firstNameTxt = new JTextField();
-        lastNameLbl = new JLabel("Επώνυμο");
+        lastNameLbl = new JLabel("Last Name");
         lastNameTxt = new JTextField();
-        emailLbl = new JLabel("email");
+        emailLbl = new JLabel("Email");
         emailTxt = new JTextField();
-        phoneNumberLbl = new JLabel("Κινητό Τηλέφωνο");
+        phoneNumberLbl = new JLabel("Mobile Phone");
         phoneNumberTxt = new JTextField();
-        subscriptionBtn = new JButton("Εγγραφή");
-        loginBtn = new JButton("Είσοδος Χρήστη");
+        subscriptionBtn = new JButton("Sign Up");
+        loginBtn = new JButton("User Login");
         messageLbl = new JLabel();
         errorFirstNameLbl = new JLabel();
         errorLastNameLbl = new JLabel();
@@ -64,7 +64,7 @@ public class LoginSubscriptionFrame extends JFrame {
     }
     
     public void prepareLoginUI() {
-        this.setTitle("Είσοδος Χρήστη");
+        this.setTitle("User Login");
         usernameLbl.setBounds(190, 170, 140, 30);
         usernameTxt.setBounds(190, 200, 140, 30);
         passwordLbl.setBounds(190, 240, 140, 30);
@@ -75,16 +75,15 @@ public class LoginSubscriptionFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema","root","vzw57hw");  
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema", "root", "vzw57hw");  
                     Statement stmt = con.createStatement();
                     String username = usernameTxt.getText();
                     String password = passwordTxt.getText();
-                    String query = "select userId from user where username='" + username + "' and password='"
-                                    + password + "';"; 
+                    String query = "select userId from user where username='" + username + "' and password='" + password + "';"; 
                     passwordTxt.setEchoChar('*');
                     ResultSet rs = stmt.executeQuery(query);
                     if (!rs.next()) {
-                        messageLbl.setText("Λάθος καταχώρηση όνομα χρήστη ή κωδικού πρόσβασης");
+                        messageLbl.setText("Incorrect username or password entry");
                         usernameTxt.setText("");
                         passwordTxt.setText("");
                     } else {
@@ -100,8 +99,8 @@ public class LoginSubscriptionFrame extends JFrame {
         });
         this.addWindowListener(new WindowAdapter() {
             @Override
-             public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+            public void windowClosing(WindowEvent e) {
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)
@@ -121,7 +120,7 @@ public class LoginSubscriptionFrame extends JFrame {
     }
     
     public void prepareSubscriptionUI() {
-        this.setTitle("Εγγραφή");
+        this.setTitle("Sign Up");
         firstNameLbl.setBounds(190, 45, 140, 30);
         firstNameTxt.setBounds(190, 80, 140, 30);
         errorFirstNameLbl.setBounds(335, 80, 200, 30);
@@ -146,7 +145,7 @@ public class LoginSubscriptionFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema","root","vzw57hw");  
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cinema", "root", "vzw57hw");  
                     Statement stmt = con.createStatement();
                     String firstName = firstNameTxt.getText();
                     String lastName = lastNameTxt.getText();
@@ -164,66 +163,66 @@ public class LoginSubscriptionFrame extends JFrame {
                     if (invalidFirstName) {
                         if (!firstName.isEmpty()) {
                             firstNameTxt.setText("");
-                            errorFirstNameLbl.setText("Λάθος καταχώρηση ονόματος");
+                            errorFirstNameLbl.setText("Incorrect first name entry");
                         }
                         validSubscription = false;
-                        messageLbl.setText("Αποτυχημένη Εγγραφή");
+                        messageLbl.setText("Failed Registration");
                     } else {
                         errorFirstNameLbl.setText("");
                     }
                     if (invalidLastName) {
                         if (!lastName.isEmpty()) {
                             lastNameTxt.setText("");
-                            errorLastNameLbl.setText("Λάθος καταχώρηση επιθέτου"); 
+                            errorLastNameLbl.setText("Incorrect last name entry"); 
                         }
                         validSubscription = false;
-                        messageLbl.setText("Αποτυχημένη Εγγραφή");
+                        messageLbl.setText("Failed Registration");
                     } else {
                         errorLastNameLbl.setText("");
                     }
                     if (!validEmail) {
                         if (!email.isEmpty()) {
                             emailTxt.setText("");
-                            errorEmailLbl.setText("Λάθος καταχώρηση email");
+                            errorEmailLbl.setText("Incorrect email entry");
                         } else {
                             errorEmailLbl.setText("");
                         }
                         validSubscription = false;
-                        messageLbl.setText("Αποτυχημένη Εγγραφή");
+                        messageLbl.setText("Failed Registration");
                     } else {
                         errorEmailLbl.setText("");
                     }
                     if (invalidPhoneNumber) {
                         if (!phoneNumber.isEmpty()) {
                             phoneNumberTxt.setText("");
-                            errorPhoneNumberLbl.setText("Λάθος καταχώρηση κινητού τηλεφώνου");
+                            errorPhoneNumberLbl.setText("Incorrect mobile phone entry");
                         }
                         validSubscription = false;
-                        messageLbl.setText("Αποτυχημένη Εγγραφή");
+                        messageLbl.setText("Failed Registration");
                     } else {
                         errorPhoneNumberLbl.setText("");
                     }
                     if (!validUsername) {
                         if (!username.isEmpty()) {
                             usernameTxt.setText("");
-                            errorUsernameLbl.setText("Λάθος καταχώρηση ονόματος χρήστη");
+                            errorUsernameLbl.setText("Incorrect username entry");
                         } else {
                             errorUsernameLbl.setText("");
                         }
                         validSubscription = false;
-                        messageLbl.setText("Αποτυχημένη Εγγραφή");
+                        messageLbl.setText("Failed Registration");
                     } else {
                         errorUsernameLbl.setText("");
                     }
                     if (!validPassword) {
                         if (!password.isEmpty()) {
-                        passwordTxt.setText("");
-                        errorPasswordLbl.setText("Λάθος καταχώρηση κωδικού πρόσβασης");
+                            passwordTxt.setText("");
+                            errorPasswordLbl.setText("Incorrect password entry");
                         } else {
                             errorPasswordLbl.setText("");
                         }
                         validSubscription = false;
-                        messageLbl.setText("Αποτυχημένη Εγγραφή");
+                        messageLbl.setText("Failed Registration");
                     } else {
                         errorPasswordLbl.setText("");
                     }
@@ -232,7 +231,7 @@ public class LoginSubscriptionFrame extends JFrame {
                          firstName + "', '" + lastName + "', '" + email + "', '" + phoneNumber + "', '" + username + "', '" 
                          + password + "');"; 
                         stmt.executeUpdate(query);
-                        messageLbl.setText("Επιτυχής εγγραφή");
+                        messageLbl.setText("Registration Successful");
                     }
                     con.close();  
                 } catch (SQLException exception) {
@@ -242,8 +241,8 @@ public class LoginSubscriptionFrame extends JFrame {
         });
         this.addWindowListener(new WindowAdapter() {
             @Override
-             public void windowClosing(WindowEvent e) {
-                int i = JOptionPane.showConfirmDialog(null, "Έξοδος από την εφαρμογή;");
+            public void windowClosing(WindowEvent e) {
+                int i = JOptionPane.showConfirmDialog(null, "Exit the application?");
                 if (i == JOptionPane.YES_OPTION) 
                     System.exit(0);
                 else if (i == JOptionPane.CANCEL_OPTION)

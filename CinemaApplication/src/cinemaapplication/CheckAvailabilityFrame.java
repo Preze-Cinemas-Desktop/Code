@@ -23,18 +23,19 @@ public class CheckAvailabilityFrame extends JFrame {
     private JButton nextBtn, exitBtn;
     private JLabel messageLbl, dialogLbl;
     
-    public CheckAvailabilityFrame() {
-        this.setSize(400, 400);
-        this.setTitle("Έλεγχος Διαθεσιμότητας");
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        this.setLayout(null);
-        
-        nextBtn = new JButton("Επόμενο");
-        exitBtn = new JButton("Έξοδος");
-        messageLbl = new JLabel();
-        dialogLbl = new JLabel();
-    }
+	public CheckAvailabilityFrame() {
+		this.setSize(400, 400);
+		this.setTitle("Availability Check");
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.setLayout(null);
+		
+		nextBtn = new JButton("Next");
+		exitBtn = new JButton("Exit");
+		messageLbl = new JLabel();
+		dialogLbl = new JLabel();
+	}
+
     
     public void prepareCheckAvailabilityUI(int userId, int movieId, int numTickets, int totalPrice) {
         try {
@@ -45,7 +46,7 @@ public class CheckAvailabilityFrame extends JFrame {
             while (rs1.next()) {
                 int availableSeats = rs1.getInt(1);
                 if (numTickets <= availableSeats) {
-                    messageLbl.setText("Επιτυχής Κράτηση");
+                    messageLbl.setText("Successful Booking");
                     messageLbl.setBounds(130, 150, 140, 30);
                     nextBtn.setBounds(110, 200, 140, 30);
                     nextBtn.addActionListener(new ActionListener() {
@@ -57,7 +58,7 @@ public class CheckAvailabilityFrame extends JFrame {
                         });
                 } else {
                     if (availableSeats == 0) {
-                        messageLbl.setText("Έλλειψη διαθεσιμότητας");
+                        messageLbl.setText("Lack of availability");
                         messageLbl.setBounds(130, 150, 140, 30);
                         exitBtn.setBounds(110, 200, 140, 30);
                         exitBtn.addActionListener(new ActionListener() {
@@ -67,7 +68,7 @@ public class CheckAvailabilityFrame extends JFrame {
                             }
                         });
                     } else {
-                        messageLbl.setText(String.valueOf(availableSeats) + " θέσεις έχουν μείνει");
+                        messageLbl.setText(String.valueOf(availableSeats) + " seats are left");
                         messageLbl.setBounds(130, 150, 140, 30);
                         nextBtn.setBounds(40, 200, 140, 30);
                         exitBtn.setBounds(200, 200, 140, 30);
