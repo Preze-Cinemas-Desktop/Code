@@ -71,28 +71,30 @@ The system is implemented using:
 | 1 | `assign/` | Assignment instructions and supporting material |
 | 1.1 | `assign/seng_instructions_2022_23_v2.pdf` | Assignment instructions (English) |
 | 1.2 | `assign/λμηχ_οδηγίες_2022_23_β2.pdf` | Assignment instructions (Greek) |
-| 2 | `CinemaApplication/` | Cinema ticket booking desktop application |
-| 2.1 | `CinemaApplication/src/` | Java source code files |
-| 2.1.1 | `CinemaApplication/src/cinemaapplication/BankSystem.java` | Bank system logic |
-| 2.1.2 | `CinemaApplication/src/cinemaapplication/CheckAvailabilityFrame.java` | GUI frame for checking availability |
-| 2.1.3 | `CinemaApplication/src/cinemaapplication/ChooseMovieFrame.java` | GUI frame for movie selection |
-| 2.1.4 | `CinemaApplication/src/cinemaapplication/ChooseTicketsFrame.java` | GUI frame for ticket selection |
-| 2.1.5 | `CinemaApplication/src/cinemaapplication/ChooseTimeViewFrame.java` | GUI frame for show time selection |
-| 2.1.6 | `CinemaApplication/src/cinemaapplication/CinemaApplication.java` | Main application class |
-| 2.1.7 | `CinemaApplication/src/cinemaapplication/CinemaFrame.java` | Main cinema GUI frame |
-| 2.1.8 | `CinemaApplication/src/cinemaapplication/DownloadTicketsFrame.java` | GUI frame to download tickets |
-| 2.1.9 | `CinemaApplication/src/cinemaapplication/DownloadTransactionReceiptFrame.java` | GUI frame to download receipts |
-| 2.1.10 | `CinemaApplication/src/cinemaapplication/ExitFrame.java` | GUI frame for exiting the application |
-| 2.1.11 | `CinemaApplication/src/cinemaapplication/LoginSubscriptionFrame.java` | GUI frame for login/subscription |
-| 2.1.12 | `CinemaApplication/src/cinemaapplication/PayFrame.java` | GUI frame for payment process |
-| 2.1.13 | `CinemaApplication/src/cinemaapplication/banksystem/BankSystem.java` | Bank system package source |
-| 2.2 | `CinemaApplication/build/` | Compiled `.class` files and build artifacts |
-| 2.3 | `CinemaApplication/nbproject/` | NetBeans project configuration files |
-| 2.4 | `CinemaApplication/*.png` | Sample movie images (e.g., `Bachelor2.png`, `Barbie.png`) |
-| 2.5 | `CinemaApplication/*.txt` | Example tickets and transaction receipts |
-| 2.6 | `CinemaApplication/build.xml` | Build configuration for NetBeans |
-| 2.7 | `CinemaApplication/manifest.mf` | Manifest file for JAR packaging |
-| 3 | `README.md` | Repository overview and usage instructions |
+| 2 | `CinemaApplication/build/` | Compiled application files and build artifacts |
+| 2.1 | `CinemaApplication/build/classes/cinemaapplication/` | Compiled `.class` files for the CinemaApplication |
+| 2.2 | `CinemaApplication/build/classes/cinemaapplication/banksystem/BankSystem.class` | Bank system backend compiled class |
+| 2.3 | `CinemaApplication/build/.netbeans_automatic_build/` | NetBeans automatic build metadata |
+| 2.4 | `CinemaApplication/build/.netbeans_update_resources/` | NetBeans resource update files |
+| 2.5 | `CinemaApplication/build/built-jar.properties` | JAR build properties |
+| 3 | `CinemaApplication/nbproject/` | NetBeans project configuration files |
+| 3.1 | `nbproject/private/` | Private project settings (`private.properties`, `private.xml`) |
+| 3.2 | `build-impl.xml` | Ant build implementation file |
+| 3.3 | `genfiles.properties` | Generated file properties |
+| 3.4 | `project.properties` | Project properties |
+| 3.5 | `project.xml` | Project metadata |
+| 4 | `CinemaApplication/src/` | Source code of the CinemaApplication |
+| 4.1 | `src/cinemaapplication/` | Main package containing application `.java` files |
+| 4.2 | `src/cinemaapplication/banksystem/BankSystem.java` | Bank system source code |
+| 4.3 | Other Java source files | Frames and application logic (`CheckAvailabilityFrame.java`, `ChooseMovieFrame.java`, etc.) |
+| 5 | `CinemaApplication/` | Media and supporting files for the application |
+| 5.1 | `Bachelor2.png`, `Barbie.png`, ... | Movie posters and related images |
+| 5.2 | `build.xml` | Ant build script |
+| 5.3 | `manifest.mf` | Manifest file for JAR packaging |
+| 5.4 | `TicketsBill123.txt`, `TransactionReceiptPanos.txt`, ... | Sample tickets and transaction receipts |
+| 6 | `walkthrough/` | Demonstration and walkthrough media |
+| 6.1 | `walkthrough/Cinema-Desktop-App-TL.mkv` | Video walkthrough of the Cinema Desktop Application |
+| 7 | `README.md` | Repository overview and usage instructions |
 
 ---
 
