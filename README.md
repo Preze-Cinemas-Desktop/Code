@@ -8,6 +8,11 @@
   DEPARTMENT OF COMPUTER ENGINEERING AND INFORMATICS
 </p>
 
+<p align="center">
+  <a href="https://www.uniwa.gr" target="_blank">University of West Attica</a> ·
+  <a href="https://ice.uniwa.gr" target="_blank">Department of Computer Engineering and Informatics</a>
+</p>
+
 ---
 
 <p align="center">
@@ -45,15 +50,25 @@
 
 </hr>
 
+---
+
 <p align="center">
   Athens, August 2023
 </p>
 
 ---
 
-# Preze Cinemas Desktop - Phase 4: Source Code
+<p align="center">
+  <img src="https://c8.alamy.com/comp/HE5CYM/movie-ticket-online-reservation-interface-concept-HE5CYM.jpg" width="250"/>
+</p>
 
-This repository phase contains the **full implementation** of the *Preze Cinemas Desktop* system.  
+---
+
+# README
+
+## Preze Cinemas Desktop - Phase 4 Source Code
+
+This repository phase contains the **full implementation** of the _Preze Cinemas Desktop_ system.  
 Phase 4 focuses on transforming previous analysis and design phases into a **working desktop application**.
 
 The system is implemented using:
@@ -66,39 +81,40 @@ The system is implemented using:
 
 ## Table of Contents
 
-| Section | Folder/File | Description |
-|------:|-------------|-------------|
-| 1 | `assign/` | Assignment instructions and supporting material |
-| 1.1 | `assign/seng_instructions_2022_23_v2.pdf` | Assignment instructions (English) |
-| 1.2 | `assign/λμηχ_οδηγίες_2022_23_β2.pdf` | Assignment instructions (Greek) |
-| 2 | `CinemaApplication/build/` | Compiled application files and build artifacts |
-| 2.1 | `CinemaApplication/build/classes/cinemaapplication/` | Compiled `.class` files for the CinemaApplication |
-| 2.2 | `CinemaApplication/build/classes/cinemaapplication/banksystem/BankSystem.class` | Bank system backend compiled class |
-| 2.3 | `CinemaApplication/build/.netbeans_automatic_build/` | NetBeans automatic build metadata |
-| 2.4 | `CinemaApplication/build/.netbeans_update_resources/` | NetBeans resource update files |
-| 2.5 | `CinemaApplication/build/built-jar.properties` | JAR build properties |
-| 3 | `CinemaApplication/nbproject/` | NetBeans project configuration files |
-| 3.1 | `nbproject/private/` | Private project settings (`private.properties`, `private.xml`) |
-| 3.2 | `build-impl.xml` | Ant build implementation file |
-| 3.3 | `genfiles.properties` | Generated file properties |
-| 3.4 | `project.properties` | Project properties |
-| 3.5 | `project.xml` | Project metadata |
-| 4 | `CinemaApplication/src/` | Source code of the CinemaApplication |
-| 4.1 | `src/cinemaapplication/` | Main package containing application `.java` files |
-| 4.2 | `src/cinemaapplication/banksystem/BankSystem.java` | Bank system source code |
-| 4.3 | Other Java source files | Frames and application logic (`CheckAvailabilityFrame.java`, `ChooseMovieFrame.java`, etc.) |
-| 5 | `CinemaApplication/` | Media and supporting files for the application |
-| 5.1 | `Bachelor2.png`, `Barbie.png`, ... | Movie posters and related images |
-| 5.2 | `build.xml` | Ant build script |
-| 5.3 | `manifest.mf` | Manifest file for JAR packaging |
-| 5.4 | `TicketsBill123.txt`, `TransactionReceiptPanos.txt`, ... | Sample tickets and transaction receipts |
-| 6 | `walkthrough/` | Demonstration and walkthrough media |
-| 6.1 | `walkthrough/Cinema-Desktop-App-TL.mkv` | Video walkthrough of the Cinema Desktop Application |
-| 7 | `README.md` | Repository overview and usage instructions |
+| Section | Folder/File                                                                     | Description                                                                                 |
+| ------: | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+|       1 | `assign/`                                                                       | Assignment instructions and supporting material                                             |
+|     1.1 | `assign/seng_instructions_2022_23_v2.pdf`                                       | Assignment instructions (English)                                                           |
+|     1.2 | `assign/λμηχ_οδηγίες_2022_23_β2.pdf`                                            | Assignment instructions (Greek)                                                             |
+|       2 | `CinemaApplication/build/`                                                      | Compiled application files and build artifacts                                              |
+|     2.1 | `CinemaApplication/build/classes/cinemaapplication/`                            | Compiled `.class` files for the CinemaApplication                                           |
+|     2.2 | `CinemaApplication/build/classes/cinemaapplication/banksystem/BankSystem.class` | Bank system backend compiled class                                                          |
+|     2.3 | `CinemaApplication/build/.netbeans_automatic_build/`                            | NetBeans automatic build metadata                                                           |
+|     2.4 | `CinemaApplication/build/.netbeans_update_resources/`                           | NetBeans resource update files                                                              |
+|     2.5 | `CinemaApplication/build/built-jar.properties`                                  | JAR build properties                                                                        |
+|       3 | `CinemaApplication/nbproject/`                                                  | NetBeans project configuration files                                                        |
+|     3.1 | `nbproject/private/`                                                            | Private project settings (`private.properties`, `private.xml`)                              |
+|     3.2 | `build-impl.xml`                                                                | Ant build implementation file                                                               |
+|     3.3 | `genfiles.properties`                                                           | Generated file properties                                                                   |
+|     3.4 | `project.properties`                                                            | Project properties                                                                          |
+|     3.5 | `project.xml`                                                                   | Project metadata                                                                            |
+|       4 | `CinemaApplication/src/`                                                        | Source code of the CinemaApplication                                                        |
+|     4.1 | `src/cinemaapplication/`                                                        | Main package containing application `.java` files                                           |
+|     4.2 | `src/cinemaapplication/banksystem/BankSystem.java`                              | Bank system source code                                                                     |
+|     4.3 | Other Java source files                                                         | Frames and application logic (`CheckAvailabilityFrame.java`, `ChooseMovieFrame.java`, etc.) |
+|       5 | `CinemaApplication/`                                                            | Media and supporting files for the application                                              |
+|     5.1 | `Bachelor2.png`, `Barbie.png`, ...                                              | Movie posters and related images                                                            |
+|     5.2 | `build.xml`                                                                     | Ant build script                                                                            |
+|     5.3 | `manifest.mf`                                                                   | Manifest file for JAR packaging                                                             |
+|     5.4 | `TicketsBill123.txt`, `TransactionReceiptPanos.txt`, ...                        | Sample tickets and transaction receipts                                                     |
+|       6 | `walkthrough/`                                                                  | Demonstration and walkthrough media                                                         |
+|     6.1 | `walkthrough/Cinema-Desktop-App-TL.mkv`                                         | Video walkthrough of the Cinema Desktop Application                                         |
+|       7 | `README.md`                                                                     | Project documentation                                                                       |
+|       8 | `INSTALL.md`                                                                    | Usage instructions                                                                          |
 
 ---
 
-## Phase 4 Objective
+## 1. Phase 4 Objective
 
 The goal of this phase is to implement all previously modeled use cases as executable components of the system.
 
@@ -106,9 +122,9 @@ Each major use case is translated into a **Java Swing Frame**, enabling user int
 
 ---
 
-## Implementation Overview
+## 2. Implementation Overview
 
-### User Interface
+### 2.1 User Interface
 
 The application uses **Java Swing** to build a desktop interface where:
 
@@ -130,29 +146,33 @@ Example:
 
 ---
 
-### Database Connectivity (JDBC)
+## 3. Database Connectivity (JDBC)
 
 The system connects to MySQL databases through **JDBC drivers**.
 
 Two databases are used:
 
-#### Cinema Database
+### 3.1 Cinema Database
+
 Stores:
+
 - Movies
 - Screenings
 - Available seats
 - Reservations
 - Customer information
 
-#### Bank Database
+### 3.2 Bank Database
+
 Simulates payment processing by storing:
+
 - Customer banking information
 - Account balances
 - Transaction updates
 
 ---
 
-### Banking System Module
+## 4. Banking System Module
 
 A separate module simulates an external bank system.
 
@@ -167,7 +187,7 @@ This module allows the cinema system to verify payments before completing reserv
 
 ---
 
-## Core Functional Flow
+## 5. Core Functional Flow
 
 1. User logs in or registers
 2. User selects movie and screening
@@ -181,19 +201,19 @@ Each step corresponds to a frame interaction and database transaction.
 
 ---
 
-## Folder Structure Overview
+## 6. Folder Structure Overview
 
-| Folder/File | Description |
-|-------------|------------|
-| `cinemaapplication/` | Main application source code |
-| `cinemaapplication/banksystem/` | Banking system simulation module |
-| `Frame.java` files | UI windows implementing each use case |
-| `database/` | SQL schema or setup scripts (if included) |
-| `README.md` | Project documentation |
+| Folder/File                     | Description                               |
+| ------------------------------- | ----------------------------------------- |
+| `cinemaapplication/`            | Main application source code              |
+| `cinemaapplication/banksystem/` | Banking system simulation module          |
+| `Frame.java` files              | UI windows implementing each use case     |
+| `database/`                     | SQL schema or setup scripts (if included) |
+| `README.md`                     | Project documentation                     |
 
 ---
 
-## Phase 4 Outcome
+## 7. Phase 4 Outcome
 
 At the end of this phase:
 
@@ -207,125 +227,6 @@ This phase results in a **fully functional desktop cinema reservation prototype*
 
 ---
 
-## Conclusion
+## 8. Conclusion
 
 Phase 4 completes the transition from system design to implementation, delivering a working application capable of managing cinema reservations, availability checks, and payment validation through an integrated desktop system.
-
----
-
-# Installation & Setup Guide – Preze Cinemas Desktop (Phase 4)
-
-This guide will help you set up and run the **Preze Cinemas Desktop** application on your local machine.
-
----
-
-## Prerequisites
-
-### Software Requirements
-
-- **Java Development Kit (JDK 11 or later)**
-  - Download: [https://www.oracle.com/java/technologies/javase-jdk11-downloads.html](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- **NetBeans IDE** (or any Java IDE supporting Swing & JDBC)
-  - Download: [https://netbeans.apache.org/download/index.html](https://netbeans.apache.org/download/index.html)
-- **MySQL Server** (≥ 8.0 recommended)
-  - Download: [https://dev.mysql.com/downloads/mysql/](https://dev.mysql.com/downloads/mysql/)
-- **MySQL Workbench** (optional, for database inspection)
-- **Git** (optional, for cloning the repository)
-
-### Optional Tools
-
-- Command-line terminal
-- Text editor for configuration file edits
-
----
-
-## 2. Clone the Repository
-
-```bash
-git clone https://github.com/Preze-Cinemas-Desktop/Code.git
-cd Code
-```
-
-The project folder structure:
-```bash
-assign/
-CinemaApplication/
-README.md
-```
-`CinemaApplication/` contains:
-- `src/` → Java source files for GUI and business logic
-- `build/` → compiled .class files
-- `nbproject/` → NetBeans project files
-- `build.xml` → build script
-- `manifest.mf` → JAR packaging file
-
-## 3. Set Up MySQL Databases
-The application requires two databases: `cinema` and `bank`.
-
-### 3.1 Create Databases
-1. Log in to MySQL:
-```bash
-mysql -u root -p
-```
-2. Create databases:
-```bash
-CREATE DATABASE cinema;
-CREATE DATABASE bank;
-```
-
-### 3.2 Import Schema and Sample Data
-If `.sql` scripts are provided in the repository (e.g., `CinemaApplication/database/`), import them:
-```bash
-mysql -u root -p cinema < cinema_schema.sql
-mysql -u root -p bank < bank_schema.sql
-```
-
-If no scripts are provided, manually create tables according to the project documentation:
-- **Cinema Database Tables**: `movies`, `screenings`, `seats`, `reservations`, `customers`
-- **Bank Database Tables**: `accounts`, `transactions`, `balances`
-
-## 4. Configure Database Connection in Java
-Open the main configuration file (or `CinemaApplication.java/BankSystem.java`) and check the JDBC connection strings:
-```bash
-String urlCinema = "jdbc:mysql://localhost:3306/cinema";
-String urlBank = "jdbc:mysql://localhost:3306/bank";
-String user = "root";
-String password = "your_mysql_password";
-```
-
-Update the username and password to match your MySQL setup.
-
-## 5. Open Project in NetBeans
-1. Launch NetBeans IDE.
-2. Click File → Open Project.
-3. Navigate to `CinemaApplication/` and select the folder.
-4. NetBeans should detect the project as a Java application.
-5. Wait until the IDE fully loads the project and resolves dependencies.
-
-## 6. Build the Application
-1. Right-click the project → Clean and Build.
-2. Check for compilation errors in the Output window.
-3. The executable `.class` files will be generated in `build/`.
-
-## 7. Run the Application
-Right-click the main class `CinemaApplication.java` → Run File.
-
-Or run from command line:
-```bash
-cd CinemaApplication/build/classes
-java cinemaapplication.CinemaApplication
-```
-
-## 8. Using the Application
-1. **Login or Register**: Start by creating a new user or logging in.
-2. **Choose Movie**: Select a movie and screening time.
-3. **Select Tickets**: Pick the number and type of tickets.
-4. **Check Availability**: Ensure tickets are available.
-5. **Payment**: Simulated via `BankSystem`.
-6. **Download Receipts/Tickets**: Save outputs as `.txt`.
-
-## 9. Troubleshooting
-- **JDBC Driver Not Found**: Ensure `mysql-connector-java.jar` is in the classpath.
-- **Database Connection Error**: Verify credentials and MySQL service status.
-- **GUI Issues**: Use NetBeans’ “Clean and Build” to resolve corrupted Swing layouts.
-- **Payment Validation Errors**: Ensure bank database contains sufficient account balances.
